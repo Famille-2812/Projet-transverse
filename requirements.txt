@@ -1,0 +1,13 @@
+# API backend
+flask==3.0.3
+flask-cors==4.0.0
+
+# Requêtes HTTP
+requests==2.32.3
+
+# Tests unitaires
+pytest==8.2.2
+pytest-cov==5.0.0
+
+# Parsing et validation
+pydantic==2.8.2
