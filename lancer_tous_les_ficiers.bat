@@ -1,53 +1,48 @@
 @echo off
+rem Empêche d’afficher chaque commande exécutée
 
-rem Script pour exécuter tous les tests en une seule fois
+echo ===============================================
+echo Début du lancement de tous les tests
+echo ===============================================
 
+rem ---------------------------
+rem Lancement des tests unitaires
+rem ---------------------------
+echo.
+echo ---------- Tests Unitaires ----------
+if exist "Tests Unitaires" (
+    python -m unittest discover -v "Tests Unitaires"
+) else (
+    echo Le dossier "Tests Unitaires" est introuvable !
+)
 
+rem ---------------------------
+rem Lancement des tests API
+rem ---------------------------
+echo.
+echo ---------- Tests API ----------
+if exist "Tests d'API" (
+    rem Ici, remplacer par la commande qui lance vos tests API, par exemple pytest
+    pytest "Tests d'API"
+) else (
+    echo Le dossier "Tests d'API" est introuvable !
+)
 
+rem ---------------------------
+rem Lancement des tests IHM
+rem ---------------------------
+echo.
+echo ---------- Tests IHM ----------
+if exist "Tests d'Interface Utilisateur" (
+    rem Ici, remplacer par la commande qui lance vos tests IHM
+    pytest "Tests d'Interface Utilisateur"
+) else (
+    echo Le dossier "Tests d'Interface Utilisateur" est introuvable !
+)
 
-echo Lancement de tous les tests...
-
-rem Affiche un message d’introduction
-
-
-
-
-call lancer_les_tests_unitaires.bat
-
-rem Appelle le script des tests unitaires
-
-if errorlevel 1 exit /b 1
-
-rem Si une erreur est détectée (code retour > 0), on arrête tout
-
-
-
-
-call lancer_tests_API.bat
-
-rem Appelle le script des tests API
-
-if errorlevel 1 exit /b 1
-
-
-
-
-call lancer_tests_ui.bat
-
-rem Appelle le script des tests IHM
-
-if errorlevel 1 exit /b 1
-
-
-
-
-echo Tous les tests sont passés avec succès !
-
-rem Message final si tout s’est bien passé
-
-
-
+echo.
+echo ===============================================
+echo Fin du lancement de tous les tests
+echo ===============================================
 
 pause
-
-rem Garde la fenêtre ouverte
