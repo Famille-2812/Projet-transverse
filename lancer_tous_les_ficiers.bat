@@ -12,7 +12,7 @@ rem Affiche un message d’introduction
 
 
 
-call lancer_tests_unitaires.bat
+call lancer_les_tests_unitaires.bat
 
 rem Appelle le script des tests unitaires
 
@@ -23,7 +23,7 @@ rem Si une erreur est détectée (code retour > 0), on arrête tout
 
 
 
-call lancer_tests_api.bat
+call lancer_tests_API.bat
 
 rem Appelle le script des tests API
 
